@@ -1,0 +1,51 @@
+generated: '2026-08-27'
+method: probed
+source: direct GET of each /.well-known/ path on shorelinebio.com, 2026-08-27
+note: >-
+  Every discovery path probed on Shoreline Biosciences' own domain returned HTTP 404. This is not a
+  soft-404 catch-all: the host is a lapsed Squarespace account that answers 404 for the site root
+  itself, so there is no served surface of any kind behind it. Recorded as an absence — no WellKnown
+  and no SecurityTxt pointer is emitted, because nothing was served. Spec-discovery paths
+  (/openapi.json, /swagger.json, /llms.txt) and the crawl basics (/robots.txt, /sitemap.xml) were
+  probed on the same host in the same pass and are recorded here for the same reason.
+hit_count: 0
+hosts:
+- host: https://www.shorelinebio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+other_paths_probed:
+- path: /openapi.json
+  status: 404
+- path: /swagger.json
+  status: 404
+- path: /llms.txt
+  status: 404
+- path: /robots.txt
+  status: 404
+- path: /sitemap.xml
+  status: 404
+- path: /
+  status: 404
+subdomains_probed:
+  note: No DNS A/CNAME record resolved for any of these conventional developer hosts.
+  hosts:
+  - api.shorelinebio.com
+  - docs.shorelinebio.com
+  - developer.shorelinebio.com
+  - developers.shorelinebio.com
+  - status.shorelinebio.com
+  - trust.shorelinebio.com
+  - portal.shorelinebio.com

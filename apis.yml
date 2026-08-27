@@ -1,9 +1,20 @@
 aid: shoreline-biosciences
 name: Shoreline Biosciences
-description: 'Shoreline Biosciences is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Shoreline Biosciences was a San Diego, California clinical-stage biotechnology company developing
+  off-the-shelf, allogeneic cell therapies from induced pluripotent stem cells (iPSCs), principally
+  iPSC-derived natural killer (iNK) cells and macrophages engineered for oncology indications. It
+  raised roughly $140M, acquired Editas Medicine's iNK cell franchise and related gene-editing
+  technologies in 2023, and signed collaborations with Kite Pharma (Gilead) and BeiGene with headline
+  values above $4B. Therapeutics, not software, were the product: no developer program, API, SDK or
+  machine-readable specification was ever published. As of this profiling pass the company's own
+  domain, shorelinebio.com, no longer serves a website — it answers HTTP 404 with a Squarespace
+  "Website Expired" holding page — and the company is tracked here only as a secondary-market entity.
 url: https://raw.githubusercontent.com/api-evangelist/shoreline-biosciences/refs/heads/main/apis.yml
 x-type: company
+x-status: defunct
+x-status-detail: Company wound down; shorelinebio.com is expired and answers HTTP 404 with a
+  Squarespace "Website Expired" holding page. Tracked here only as a secondary-market entity.
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
@@ -12,6 +23,13 @@ created: '2026-08-27'
 modified: '2026-08-27'
 tags:
 - Company
+- Biotechnology
+- Life Sciences
+- Cell Therapy
+- Immunotherapy
+- Oncology
+- Stem Cells
+- Pharmaceuticals
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,36 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://forgeglobal.com/shoreline-biosciences_stock/
+# No Website entry on purpose. shorelinebio.com is expired (404, Squarespace
+# "Website Expired" holding page) and the company is defunct, so there is no
+# first-party site to point at. The Forge Global listing that enrichment fell
+# back to is a TRADING VENUE's page about the company, not the company's own
+# site — registering it here would be false credit (roadmap#56).
+- type: DomainSecurity
+  url: security/shoreline-biosciences-domain-security.yml
+x-enrichment:
+  date: '2026-08-27'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Shoreline Biosciences' own domain shorelinebio.com no longer serves a website — both the apex and
+    www answer HTTP 404 with a Squarespace "Website Expired" holding page — so there is no homepage,
+    developer area, docs host or resolvable api./docs./developer. subdomain left to profile.
+  evidence:
+  - url: https://www.shorelinebio.com/
+    status: 404
+  - url: https://shorelinebio.com/
+    status: 404
+  - url: https://www.shorelinebio.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.shorelinebio.com/openapi.json
+    status: 404
+  - url: https://www.shorelinebio.com/llms.txt
+    status: 404
+  - url: https://forgeglobal.com/shoreline-biosciences_stock/
+    status: 403
+  checked: '2026-08-27'
