@@ -18,6 +18,17 @@ x-status-detail: Company wound down; shorelinebio.com is expired and answers HTT
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-08-27'
 modified: '2026-08-27'
